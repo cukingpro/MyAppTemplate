@@ -1,6 +1,4 @@
 import UIKit
-import MyAppKit
-import MyAppUI
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,9 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         viewController.view.backgroundColor = .white
         window?.rootViewController = viewController
         window?.makeKeyAndVisible()
-        
-        MyAppKit.hello()
-        MyAppUI.hello()
 
         return true
     }
