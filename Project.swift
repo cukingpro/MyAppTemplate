@@ -51,7 +51,8 @@ let project = Project(
                 "Targets/MyApp/Sources/**/*.xib",
             ],
             dependencies: [
-                .external(name: "Alamofire")
+                .external(name: "Alamofire"),
+                .external(name: "XCoordinator"),
             ]
         ),
     ]
