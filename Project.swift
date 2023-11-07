@@ -46,7 +46,10 @@ let project = Project(
             bundleId: "com.thehuytong.myapp",
             infoPlist: .extendingDefault(with: infoPlist),
             sources: "Targets/MyApp/Sources/**",
-            resources: ["Targets/MyApp/Resources/**"],
+            resources: [
+                "Targets/MyApp/Resources/**",
+                "Targets/MyApp/Sources/**/*.xib",
+            ],
             dependencies: [
                 .external(name: "Alamofire")
             ]
