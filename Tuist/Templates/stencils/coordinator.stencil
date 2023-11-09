@@ -1,0 +1,19 @@
+import XCoordinator
+
+enum {{name}}Route: Route {
+    case root
+}
+
+class {{name}}Coordinator: NavigationCoordinator<{{name}}Route> {
+    init(rootViewController: BaseNavigationController) {
+        super.init(rootViewController: rootViewController)
+        trigger(.root)
+    }
+
+    override func prepareTransition(for route: {{name}}Route) -> NavigationTransition {
+        switch route {
+        case .root:
+            return .none()
+        }
+    }
+}

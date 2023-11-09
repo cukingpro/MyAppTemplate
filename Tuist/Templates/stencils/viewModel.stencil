@@ -1,0 +1,9 @@
+import XCoordinator
+
+class {{name}}ViewModel: ViewModelType {
+    private let router: UnownedRouter<{{name}}Route>
+    
+    init(router: UnownedRouter<{{name}}Route>) {
+        self.router = router
+    }
+}
