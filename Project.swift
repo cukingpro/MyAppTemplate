@@ -53,6 +53,17 @@ let project = Project(
             dependencies: [
                 .external(name: "Alamofire"),
                 .external(name: "XCoordinator"),
+                .external(name: "Pageboy"),
+                .external(name: "RxSwift"),
+                .external(name: "SwifterSwift"),
+                .external(name: "RxDataSources"),
+                .external(name: "RxSwiftExt"),
+                .external(name: "RxViewController"),
+                .external(name: "RxReachability"),
+                .external(name: "Moya"),
+                .external(name: "IQKeyboardManagerSwift"),
+                .external(name: "IHProgressHUD"),
+                .external(name: "NSObject-Rx"),
             ]
         ),
     ]

@@ -1,19 +1,46 @@
+import IQKeyboardManagerSwift
+import IHProgressHUD
+import SwifterSwift
 import UIKit
+
+typealias HUD = IHProgressHUD
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
-    
+
     let appCoordinator = AppCoordinator().strongRouter
 
     func application(
         _ application: UIApplication,
-        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
     ) -> Bool {
-        window = UIWindow(frame: UIScreen.main.bounds)
-        appCoordinator.setRoot(for: window!)
+        configure()
         return true
     }
+}
 
+// MARK: - Configure Third Party
+
+private extension AppDelegate {
+    private func configure() {
+        configureIQKeyboardManager()
+        configureLoadingView()
+        configureRoot()
+    }
+
+    func configureRoot() {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        appCoordinator.setRoot(for: window!)
+    }
+
+    func configureIQKeyboardManager() {
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.resignOnTouchOutside = true
+        IQKeyboardManager.shared.enableAutoToolbar = false
+    }
+
+    func configureLoadingView() {
+        HUD.set(defaultMaskType: .clear)
+    }
 }
