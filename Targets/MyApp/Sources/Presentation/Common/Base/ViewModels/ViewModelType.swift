@@ -8,6 +8,9 @@
 
 import Foundation
 
-protocol ViewModelType {
-    
+protocol ViewModelType: AnyObject {
+    associatedtype Input
+    associatedtype Output
+
+    func transform(_ input: Input) -> Output
 }

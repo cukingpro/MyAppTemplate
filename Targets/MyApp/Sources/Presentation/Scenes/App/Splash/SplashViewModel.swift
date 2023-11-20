@@ -7,12 +7,25 @@
 //
 
 import Foundation
+import RxCocoa
+import RxSwift
 import XCoordinator
 
-class SplashViewModel: ViewModelType {
+final class SplashViewModel: ViewModelType {
     let router: UnownedRouter<AppRoute>
+    let disposeBag = DisposeBag()
 
     init(router: UnownedRouter<AppRoute>) {
         self.router = router
+    }
+}
+
+extension SplashViewModel {
+    struct Input {}
+
+    struct Output {}
+
+    func transform(_ input: Input) -> Output {
+        return Output()
     }
 }
