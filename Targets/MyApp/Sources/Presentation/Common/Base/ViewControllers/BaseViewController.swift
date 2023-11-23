@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxViewController
+import NSObject_Rx
 
 class BaseViewController<T: ViewModelType>: UIViewController {
     let viewModel: T

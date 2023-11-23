@@ -22,6 +22,7 @@ let dependencies = Dependencies(
         .remote(url: "https://github.com/hackiftekhar/IQKeyboardManager", requirement: .branch("master")),
         .remote(url: "https://github.com/Swiftify-Corp/IHProgressHUD", requirement: .upToNextMajor(from: "0.1.8")),
         .remote(url: "https://github.com/RxSwiftCommunity/NSObject-Rx", requirement: .branch("master")),
+        .remote(url: "https://github.com//cukingpro/ProgressHUD", requirement: .branch("13.8.6_animation-on-view")),
     ],
     platforms: [.iOS]
 )

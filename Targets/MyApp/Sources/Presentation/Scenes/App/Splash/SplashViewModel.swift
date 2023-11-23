@@ -21,11 +21,23 @@ final class SplashViewModel: ViewModelType {
 }
 
 extension SplashViewModel {
-    struct Input {}
+    struct Input {
+        let viewDidLoad: Driver<Void>
+    }
 
-    struct Output {}
+    struct Output {
+        let isLoading: Driver<Bool>
+    }
 
     func transform(_ input: Input) -> Output {
-        return Output()
+        let activityIndicator = ActivityIndicator()
+        Driver.just(())
+            .delay(.seconds(5))
+            .trackActivity(activityIndicator)
+            .asDriver(onErrorJustReturn: ())
+            .drive()
+            .disposed(by: disposeBag)
+
+        return Output(isLoading: activityIndicator.asDriver())
     }
 }

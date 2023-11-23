@@ -1,9 +1,9 @@
 import IQKeyboardManagerSwift
-import IHProgressHUD
+import ProgressHUD
 import SwifterSwift
 import UIKit
 
-typealias HUD = IHProgressHUD
+typealias HUD = ProgressHUD
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -41,6 +41,7 @@ private extension AppDelegate {
     }
 
     func configureLoadingView() {
-        HUD.set(defaultMaskType: .clear)
+        HUD.animationType = .circleDotSpinFade
+        HUD.colorAnimation = MyAppAsset.Colors.primary.color
     }
 }

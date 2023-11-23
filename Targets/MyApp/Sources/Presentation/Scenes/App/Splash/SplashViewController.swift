@@ -8,18 +8,29 @@
 
 import UIKit
 
-class SplashViewController: BaseViewController<SplashViewModel> {
-    
+final class SplashViewController: BaseViewController<SplashViewModel> {
     @IBOutlet private weak var backgroundImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var loadingView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
 
-        backgroundImageView.image = MyAppAsset.Images.splash.image
-        backgroundImageView.contentMode = .scaleAspectFill
-        titleLabel.font = MyAppFontFamily.SFProDisplay.bold.font(size: 32)
-        titleLabel.textColor = MyAppAsset.Colors.white.color
-        titleLabel.text = MyAppStrings.welcomeTo("MyApp Template")
+    override func configureUI() {
+        super.configureUI()
+        backgroundImageView.image = MyAppAsset.Images.logo.image
+        titleLabel.font = MyAppFontFamily.Urbanist.bold.font(size: 40)
+        titleLabel.textColor = MyAppAsset.Colors.greyscale900.color
+        titleLabel.text = MyAppStrings.qubikoAi
+    }
+
+    override func bindViewModel() {
+        super.bindViewModel()
+        let input = SplashViewModel.Input(viewDidLoad: rx.viewDidLoad.asDriver())
+        let output = viewModel.transform(input)
+        output.isLoading
+            .drive(HUD.rx.isAnimating(on: loadingView))
+            .disposed(by: rx.disposeBag)
     }
 }

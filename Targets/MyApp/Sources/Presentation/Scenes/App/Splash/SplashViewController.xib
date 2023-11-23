@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SplashViewController" customModule="MyApp" customModuleProvider="target">
             <connections>
                 <outlet property="backgroundImageView" destination="9XD-gY-oii" id="izQ-Et-2UO"/>
+                <outlet property="loadingView" destination="AbG-mc-p8J" id="3Qm-KD-Kvu"/>
                 <outlet property="titleLabel" destination="UAc-Xo-sL6" id="Lh9-om-Rm4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,32 +21,42 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9XD-gY-oii">
-                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Splash" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAc-Xo-sL6">
-                    <rect key="frame" x="50" y="416" width="293" height="20.333333333333314"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="kdC-eY-tS7">
+                    <rect key="frame" x="127.33333333333333" y="263" width="138.66666666666669" height="240.66666666666663"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="9XD-gY-oii">
+                            <rect key="frame" x="0.0" y="0.0" width="138.66666666666666" height="150.33333333333334"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Splash" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAc-Xo-sL6">
+                            <rect key="frame" x="0.0" y="220.33333333333331" width="138.66666666666666" height="20.333333333333343"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AbG-mc-p8J">
+                    <rect key="frame" x="166.66666666666666" y="658" width="60" height="60"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="GtO-Fv-rq8"/>
+                        <constraint firstAttribute="width" constant="60" id="o1E-M8-ey8"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9XD-gY-oii" secondAttribute="trailing" id="8e9-fN-4ID"/>
-                <constraint firstItem="UAc-Xo-sL6" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="AHh-ex-LL9"/>
-                <constraint firstAttribute="bottom" secondItem="9XD-gY-oii" secondAttribute="bottom" id="TYC-cF-NVq"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UAc-Xo-sL6" secondAttribute="trailing" constant="50" id="aKb-qQ-Hl7"/>
-                <constraint firstItem="UAc-Xo-sL6" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gAR-ot-5Ao"/>
-                <constraint firstItem="9XD-gY-oii" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="iKS-9n-sAR"/>
-                <constraint firstItem="9XD-gY-oii" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="kn7-YP-CPf"/>
-                <constraint firstItem="UAc-Xo-sL6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="pRA-j2-h4l"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="AbG-mc-p8J" secondAttribute="bottom" constant="100" id="ISl-0c-Qym"/>
+                <constraint firstItem="kdC-eY-tS7" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="KHI-hB-3SZ"/>
+                <constraint firstItem="AbG-mc-p8J" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Suk-MC-a2K"/>
+                <constraint firstItem="kdC-eY-tS7" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.9" id="YAf-qv-hcc"/>
             </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
     </objects>
     <resources>
+        <image name="Logo" width="138.66667175292969" height="150.33332824707031"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

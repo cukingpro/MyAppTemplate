@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import NSObject_Rx
 
-protocol ViewModelType: AnyObject {
+protocol ViewModelType: AnyObject, HasDisposeBag {
     associatedtype Input
     associatedtype Output
 
