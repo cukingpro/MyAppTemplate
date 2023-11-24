@@ -44,6 +44,7 @@ let project = Project(
             platform: .iOS,
             product: .app,
             bundleId: "com.thehuytong.myapp",
+            deploymentTarget: .iOS(targetVersion: "15.0", devices: [.iphone, .ipad]),
             infoPlist: .extendingDefault(with: infoPlist),
             sources: "Targets/MyApp/Sources/**",
             resources: [
@@ -64,6 +65,8 @@ let project = Project(
                 .external(name: "IQKeyboardManagerSwift"),
                 .external(name: "IHProgressHUD"),
                 .external(name: "NSObject-Rx"),
+                .external(name: "ProgressHUD"),
+                .external(name: "Then"),
             ]
         ),
     ]
