@@ -11,6 +11,7 @@ import XCoordinator
 enum AppRoute: Route {
     case splash
     case walkthrough
+    case welcome
 }
 
 class AppCoordinator: NavigationCoordinator<AppRoute> {
@@ -28,6 +29,11 @@ class AppCoordinator: NavigationCoordinator<AppRoute> {
         case .walkthrough:
             let viewModel = WalkthroughViewModel(router: unownedRouter)
             let viewController = WalkthroughViewController(viewModel: viewModel)
+            return .set([viewController])
+            
+        case .welcome:
+            let viewModel = WelcomeViewModel(router: unownedRouter)
+            let viewController = WelcomeViewController(viewModel: viewModel)
             return .set([viewController])
         }
     }

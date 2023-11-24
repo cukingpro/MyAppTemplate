@@ -1,6 +1,7 @@
-import XCoordinator
 import NSObject_Rx
 import RxCocoa
+import RxSwift
+import XCoordinator
 
 final class WalkthroughViewModel: ViewModelType, HasDisposeBag {
     private let router: UnownedRouter<AppRoute>
@@ -16,7 +17,7 @@ final class WalkthroughViewModel: ViewModelType, HasDisposeBag {
               subtitle: MyAppStrings.walkthroughSubtitle2),
     ]
     private let currentIndex = BehaviorRelay(value: 0)
-    
+
     init(router: UnownedRouter<AppRoute>) {
         self.router = router
     }
@@ -34,26 +35,25 @@ extension WalkthroughViewModel {
     }
 
     func transform(_ input: Input) -> Output {
-        let continueTrigger = input.continueTrigger
+        let finishTrigger = PublishSubject<Void>()
+
+        input.continueTrigger
             .withLatestFrom(currentIndex.asDriver())
-            .filter({ $0 < self.items.count - 1 })
-        
-        continueTrigger
-            .map({ $0 + 1 })
-            .drive(currentIndex)
-            .disposed(by: disposeBag)
-        
-        let finishTrigger = input.continueTrigger
-            .withLatestFrom(currentIndex.asDriver())
-            .filter({ $0 == self.items.count - 1 })
-            .mapTo(())
-        
-        Driver.merge(finishTrigger, input.skipTrigger)
-            .drive(onNext: { _ in
-                // Go to welcome screen
+            .drive(onNext: { [unowned self] index in
+                if index < items.count - 1 {
+                    currentIndex.accept(index + 1)
+                } else {
+                    finishTrigger.onNext(())
+                }
             })
             .disposed(by: disposeBag)
-        
+
+        Driver.merge(finishTrigger.asDriverOnErrorJustComplete(), input.skipTrigger)
+            .drive(onNext: { [unowned self] _ in
+                router.trigger(.welcome)
+            })
+            .disposed(by: disposeBag)
+
         let output = Output(items: Driver.just(items),
                             currentIndex: currentIndex.asDriver())
         return output
