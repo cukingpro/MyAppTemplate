@@ -19,10 +19,14 @@ final class SplashViewController: BaseViewController<SplashViewModel> {
 
     override func configureUI() {
         super.configureUI()
+        view.backgroundColor = MyAppAsset.Colors.white.color
+        loadingView.backgroundColor = MyAppAsset.Colors.white.color
         backgroundImageView.image = MyAppAsset.Images.logo.image
-        titleLabel.font = MyAppFontFamily.Urbanist.bold.font(size: 40)
-        titleLabel.textColor = MyAppAsset.Colors.greyscale900.color
-        titleLabel.text = MyAppStrings.qubikoAi
+        titleLabel.do {
+            $0.font = MyAppFontFamily.Urbanist.bold.font(size: 40)
+            $0.textColor = MyAppAsset.Colors.greyscale900.color
+            $0.text = MyAppStrings.qubikoAi
+        }
     }
 
     override func bindViewModel() {
