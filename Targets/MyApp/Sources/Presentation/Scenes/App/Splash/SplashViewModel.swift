@@ -32,10 +32,13 @@ extension SplashViewModel {
     func transform(_ input: Input) -> Output {
         let activityIndicator = ActivityIndicator()
         Driver.just(())
-            .delay(.seconds(5))
+            .delay(.seconds(1))
             .trackActivity(activityIndicator)
             .asDriver(onErrorJustReturn: ())
-            .drive()
+            .drive(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                self.router.trigger(.walkthrough)
+            })
             .disposed(by: disposeBag)
 
         return Output(isLoading: activityIndicator.asDriver())

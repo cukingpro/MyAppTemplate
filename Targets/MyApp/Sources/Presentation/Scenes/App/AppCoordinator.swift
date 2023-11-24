@@ -10,6 +10,7 @@ import XCoordinator
 
 enum AppRoute: Route {
     case splash
+    case walkthrough
 }
 
 class AppCoordinator: NavigationCoordinator<AppRoute> {
@@ -23,6 +24,11 @@ class AppCoordinator: NavigationCoordinator<AppRoute> {
             let viewModel = SplashViewModel(router: unownedRouter)
             let viewController = SplashViewController(viewModel: viewModel)
             return .push(viewController)
+            
+        case .walkthrough:
+            let viewModel = WalkthroughViewModel(router: unownedRouter)
+            let viewController = WalkthroughViewController(viewModel: viewModel)
+            return .set([viewController])
         }
     }
 }

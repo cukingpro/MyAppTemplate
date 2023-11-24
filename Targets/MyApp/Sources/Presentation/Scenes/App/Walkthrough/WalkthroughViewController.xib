@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WalkthroughViewController" customModule="MyApp" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="5yR-f8-IH6" id="NUW-Gw-pv4"/>
+                <outlet property="nextButton" destination="zwG-K5-9g5" id="ywa-1K-GZk"/>
+                <outlet property="pageControl" destination="bHT-23-94m" id="xex-XI-ae3"/>
+                <outlet property="skipButton" destination="GUU-dn-4WS" id="qho-dc-aIf"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GradiantBackground" translatesAutoresizingMaskIntoConstraints="NO" id="GoN-QZ-rnn">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="afo-yR-wFy" userLabel="Top View">
+                    <rect key="frame" x="0.0" y="59" width="393" height="646"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zdg-DF-36e">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="646"/>
+                            <subviews>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="5yR-f8-IH6">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="548"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FZW-0n-WdB">
+                                        <size key="itemSize" width="128" height="128"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                </collectionView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zrY-K3-zlc" userLabel="Page Control View">
+                                    <rect key="frame" x="0.0" y="548" width="393" height="98"/>
+                                    <subviews>
+                                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="bHT-23-94m">
+                                            <rect key="frame" x="138.66666666666666" y="32" width="115.66666666666666" height="26"/>
+                                            <color key="pageIndicatorTintColor" name="Greyscale 300"/>
+                                            <color key="currentPageIndicatorTintColor" name="Primary"/>
+                                        </pageControl>
+                                    </subviews>
+                                    <color key="backgroundColor" name="White"/>
+                                    <constraints>
+                                        <constraint firstItem="bHT-23-94m" firstAttribute="centerX" secondItem="zrY-K3-zlc" secondAttribute="centerX" id="1aN-bS-GG5"/>
+                                        <constraint firstItem="bHT-23-94m" firstAttribute="top" secondItem="zrY-K3-zlc" secondAttribute="top" constant="32" id="hu3-II-Q29"/>
+                                        <constraint firstAttribute="bottom" secondItem="bHT-23-94m" secondAttribute="bottom" constant="40" id="ysE-Og-izh"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="zdg-DF-36e" firstAttribute="leading" secondItem="afo-yR-wFy" secondAttribute="leading" id="PdH-36-5wU"/>
+                        <constraint firstAttribute="trailing" secondItem="zdg-DF-36e" secondAttribute="trailing" id="hQt-gd-uL6"/>
+                        <constraint firstItem="zdg-DF-36e" firstAttribute="top" secondItem="afo-yR-wFy" secondAttribute="top" id="kO3-ws-L1Y"/>
+                        <constraint firstAttribute="bottom" secondItem="zdg-DF-36e" secondAttribute="bottom" id="ncr-TF-L2g"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yXd-Is-4hi">
+                    <rect key="frame" x="0.0" y="705" width="393" height="147"/>
+                    <color key="backgroundColor" name="White"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="73J-5x-MCz" userLabel="Button View">
+                    <rect key="frame" x="0.0" y="705" width="393" height="113"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="azt-Vc-5c1">
+                            <rect key="frame" x="24" y="24" width="345" height="65"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GUU-dn-4WS" customClass="AppSecondaryButton" customModule="MyApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="164.66666666666666" height="65"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwG-K5-9g5" customClass="AppPrimaryButton" customModule="MyApp" customModuleProvider="target">
+                                    <rect key="frame" x="180.66666666666663" y="0.0" width="164.33333333333337" height="65"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="65" id="h4s-D0-IRM"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" name="White"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="azt-Vc-5c1" secondAttribute="bottom" constant="24" id="3jK-Dk-9Jv"/>
+                        <constraint firstItem="azt-Vc-5c1" firstAttribute="top" secondItem="73J-5x-MCz" secondAttribute="top" constant="24" id="svm-yX-cf9"/>
+                        <constraint firstAttribute="trailing" secondItem="azt-Vc-5c1" secondAttribute="trailing" constant="24" id="t2r-fT-ffy"/>
+                        <constraint firstItem="azt-Vc-5c1" firstAttribute="leading" secondItem="73J-5x-MCz" secondAttribute="leading" constant="24" id="uvl-PO-vRI"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="yXd-Is-4hi" secondAttribute="bottom" id="9sk-f4-pGH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yXd-Is-4hi" secondAttribute="trailing" id="HGf-GX-EKq"/>
+                <constraint firstItem="yXd-Is-4hi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Hcf-xB-0yn"/>
+                <constraint firstItem="73J-5x-MCz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="JcQ-k4-2V4"/>
+                <constraint firstItem="yXd-Is-4hi" firstAttribute="top" secondItem="73J-5x-MCz" secondAttribute="top" id="KFK-bg-3KZ"/>
+                <constraint firstItem="GoN-QZ-rnn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="KTo-F3-vNG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="73J-5x-MCz" secondAttribute="bottom" id="Q1W-X4-g6p"/>
+                <constraint firstItem="afo-yR-wFy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="R7M-GF-P45"/>
+                <constraint firstItem="GoN-QZ-rnn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="XPy-AK-LH1"/>
+                <constraint firstItem="73J-5x-MCz" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="f2V-B0-apD"/>
+                <constraint firstItem="73J-5x-MCz" firstAttribute="top" secondItem="afo-yR-wFy" secondAttribute="bottom" id="hgI-A4-t9Q"/>
+                <constraint firstAttribute="trailing" secondItem="GoN-QZ-rnn" secondAttribute="trailing" id="lSt-2V-THu"/>
+                <constraint firstAttribute="bottom" secondItem="GoN-QZ-rnn" secondAttribute="bottom" id="omn-dD-gfv"/>
+                <constraint firstItem="afo-yR-wFy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pWO-vq-uSA"/>
+                <constraint firstItem="afo-yR-wFy" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="qCH-Qu-Uhl"/>
+            </constraints>
+            <point key="canvasLocation" x="103.05343511450381" y="-11.267605633802818"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="GradiantBackground" width="4096" height="2300"/>
+        <namedColor name="Greyscale 300">
+            <color red="0.87800002098083496" green="0.87800002098083496" blue="0.87800002098083496" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Primary">
+            <color red="0.49399998784065247" green="0.57300001382827759" blue="0.97299998998641968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
