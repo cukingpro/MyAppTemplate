@@ -1,0 +1,140 @@
+{
+  "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire",
+      "state" : {
+        "revision" : "3dc6a42c7727c49bf26508e29b0a0b35f9c7e1ad",
+        "version" : "5.8.1"
+      }
+    },
+    {
+      "identity" : "ihprogresshud",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Swiftify-Corp/IHProgressHUD",
+      "state" : {
+        "revision" : "c3e0cf90ba1b310073e841de7dc6ef0a2d4899e2",
+        "version" : "0.1.8"
+      }
+    },
+    {
+      "identity" : "iqkeyboardmanager",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hackiftekhar/IQKeyboardManager",
+      "state" : {
+        "branch" : "master",
+        "revision" : "5be52f920717cdd73cca9fa0ef4c8a2e757f3d27"
+      }
+    },
+    {
+      "identity" : "moya",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Moya/Moya",
+      "state" : {
+        "revision" : "c263811c1f3dbf002be9bd83107f7cdc38992b26",
+        "version" : "15.0.3"
+      }
+    },
+    {
+      "identity" : "nsobject-rx",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/RxSwiftCommunity/NSObject-Rx",
+      "state" : {
+        "branch" : "master",
+        "revision" : "1039ad229f973d7df9dd9c9e6b22e46bd5b2e0e8"
+      }
+    },
+    {
+      "identity" : "progresshud",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com//cukingpro/ProgressHUD",
+      "state" : {
+        "branch" : "13.8.6_animation-on-view",
+        "revision" : "96249dd2bd2d979a973c28e647c328e03d81625c"
+      }
+    },
+    {
+      "identity" : "reachability.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ashleymills/Reachability.swift",
+      "state" : {
+        "revision" : "c01bbdf2d633cf049ae1ed1a68a2020a8bda32e2",
+        "version" : "5.1.0"
+      }
+    },
+    {
+      "identity" : "reactiveswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ReactiveCocoa/ReactiveSwift.git",
+      "state" : {
+        "revision" : "c43bae3dac73fdd3cb906bd5a1914686ca71ed3c",
+        "version" : "6.7.0"
+      }
+    },
+    {
+      "identity" : "rxdatasources",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/RxSwiftCommunity/RxDataSources",
+      "state" : {
+        "revision" : "90c29b48b628479097fe775ed1966d75ac374518",
+        "version" : "5.0.2"
+      }
+    },
+    {
+      "identity" : "rxreachability",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/RxSwiftCommunity/RxReachability",
+      "state" : {
+        "revision" : "8087d7154796406c8981961858b31324743311cf",
+        "version" : "1.2.1"
+      }
+    },
+    {
+      "identity" : "rxswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ReactiveX/RxSwift.git",
+      "state" : {
+        "revision" : "9dcaa4b333db437b0fbfaf453fad29069044a8b4",
+        "version" : "6.6.0"
+      }
+    },
+    {
+      "identity" : "rxswiftext",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/RxSwiftCommunity/RxSwiftExt",
+      "state" : {
+        "revision" : "eb4adf9f00a21b3efc3869a5218a6d7517e95222",
+        "version" : "6.2.1"
+      }
+    },
+    {
+      "identity" : "rxviewcontroller",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jay-handhug/RxViewController",
+      "state" : {
+        "branch" : "master",
+        "revision" : "00d28c077313a7ca6a7008632d20aaca15cd7d0e"
+      }
+    },
+    {
+      "identity" : "then",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/devxoul/Then",
+      "state" : {
+        "revision" : "d41ef523faef0f911369f79c0b96815d9dbb6d7a",
+        "version" : "3.0.0"
+      }
+    },
+    {
+      "identity" : "xcoordinator",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/QuickBirdEng/XCoordinator",
+      "state" : {
+        "revision" : "00b066139ed0bf2f68549a7d87434ed36dfa6dea",
+        "version" : "2.2.1"
+      }
+    }
+  ],
+  "version" : 2
+}

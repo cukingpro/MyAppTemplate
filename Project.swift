@@ -52,9 +52,7 @@ let project = Project(
                 "Targets/MyApp/Sources/**/*.xib",
             ],
             dependencies: [
-                .external(name: "Alamofire"),
                 .external(name: "XCoordinator"),
-                .external(name: "Pageboy"),
                 .external(name: "RxSwift"),
                 .external(name: "SwifterSwift"),
                 .external(name: "RxDataSources"),
