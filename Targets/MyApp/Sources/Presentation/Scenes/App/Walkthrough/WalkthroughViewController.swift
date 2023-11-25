@@ -4,7 +4,7 @@ import UIKit
 final class WalkthroughViewController: BaseViewController<WalkthroughViewModel> {
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var pageControl: UIPageControl!
-    @IBOutlet private weak var skipButton: AppSecondaryButton!
+    @IBOutlet private weak var skipButton: AppTertiaryButton!
     @IBOutlet private weak var nextButton: AppPrimaryButton!
     
     override func viewDidLoad() {

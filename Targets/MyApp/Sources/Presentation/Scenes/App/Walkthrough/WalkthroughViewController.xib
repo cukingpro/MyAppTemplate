@@ -80,7 +80,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="azt-Vc-5c1">
                             <rect key="frame" x="24" y="24" width="345" height="65"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GUU-dn-4WS" customClass="AppSecondaryButton" customModule="MyApp" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GUU-dn-4WS" customClass="AppTertiaryButton" customModule="MyApp" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="164.66666666666666" height="65"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Button"/>
