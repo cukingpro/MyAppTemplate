@@ -9,10 +9,31 @@
 import UIKit
 
 class BaseNavigationController: UINavigationController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.configureWithTransparentBackground()
+        navigationBarAppearance.titleTextAttributes = [
+            .foregroundColor: MyAppAsset.Colors.greyscale900.color,
+            .font: MyAppFontFamily.Urbanist.bold.font(size: 24)
+        ]
+        navigationBarAppearance.largeTitleTextAttributes = [
+            .foregroundColor: MyAppAsset.Colors.greyscale900.color,
+            .font: MyAppFontFamily.Urbanist.bold.font(size: 32)
+        ]
+
+        let backImage = MyAppAsset.Images.backIcon.image
+        navigationBarAppearance.setBackIndicatorImage(backImage, transitionMaskImage: backImage)
+        UIBarButtonItem.appearance().tintColor = MyAppAsset.Colors.greyscale900.color
+
+        navigationBar.prefersLargeTitles = true
+        navigationBar.layoutMargins.left = 24
+        navigationBar.standardAppearance = navigationBarAppearance
+        navigationBar.compactAppearance = navigationBarAppearance
+        navigationBar.scrollEdgeAppearance = navigationBarAppearance
+        if #available(iOS 15.0, *) { // For compatibility with earlier iOS.
+            navigationBar.compactScrollEdgeAppearance = navigationBarAppearance
+        }
     }
 }

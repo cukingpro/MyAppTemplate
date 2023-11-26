@@ -31,7 +31,8 @@ class BaseViewController<T: ViewModelType>: UIViewController {
     }
     
     func configureUI() {
-        
+        view.backgroundColor = MyAppAsset.Colors.white.color
+        navigationItem.backButtonDisplayMode = .minimal
     }
     
     func bindViewModel() {

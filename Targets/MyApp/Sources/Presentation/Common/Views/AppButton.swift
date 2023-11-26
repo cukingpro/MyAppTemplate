@@ -57,6 +57,8 @@ final class AppSecondaryButton: AppButton {
             $0.cornerStyle = .capsule
             $0.baseBackgroundColor = MyAppAsset.Colors.white.color
             $0.baseForegroundColor = MyAppAsset.Colors.primary.color
+            $0.background.strokeWidth = 1
+            $0.background.strokeColor = MyAppAsset.Colors.border.color
         }
         self.configuration = configuration
     }
@@ -69,6 +71,8 @@ final class AppTertiaryButton: AppButton {
             $0.cornerStyle = .capsule
             $0.baseBackgroundColor = MyAppAsset.Colors.neutral.color
             $0.baseForegroundColor = MyAppAsset.Colors.primary.color
+            $0.background.strokeWidth = 1
+            $0.background.strokeColor = MyAppAsset.Colors.border.color
         }
         self.configuration = configuration
     }
