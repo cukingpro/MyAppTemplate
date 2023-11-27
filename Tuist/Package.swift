@@ -17,7 +17,6 @@ let package = Package(
         .package(url: "https://github.com/jay-handhug/RxViewController", branch: "master"),
         .package(url: "https://github.com/RxSwiftCommunity/RxReachability", .upToNextMajor(from: "1.2.1")),
         .package(url: "https://github.com/Moya/Moya", .upToNextMajor(from: "15.0.0")),
-        .package(url: "https://github.com/hackiftekhar/IQKeyboardManager", branch: "master"),
         .package(url: "https://github.com/Swiftify-Corp/IHProgressHUD", .upToNextMajor(from: "0.1.8")),
         .package(url: "https://github.com/RxSwiftCommunity/NSObject-Rx", branch: "master"),
         .package(url: "https://github.com/cukingpro/ProgressHUD", branch: "13.8.6_animation-on-view"),

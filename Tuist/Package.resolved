@@ -19,15 +19,6 @@
       }
     },
     {
-      "identity" : "iqkeyboardmanager",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/hackiftekhar/IQKeyboardManager",
-      "state" : {
-        "branch" : "master",
-        "revision" : "5be52f920717cdd73cca9fa0ef4c8a2e757f3d27"
-      }
-    },
-    {
       "identity" : "moya",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Moya/Moya",
