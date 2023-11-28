@@ -65,6 +65,7 @@ let project = Project(
                 .external(name: "NSObject-Rx"),
                 .external(name: "ProgressHUD"),
                 .external(name: "Then"),
+                .external(name: "BEMCheckBox"),
             ]
         ),
     ]

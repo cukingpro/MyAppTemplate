@@ -12,11 +12,12 @@ enum AppRoute: Route {
     case splash
     case walkthrough
     case welcome
+    case signUp
 }
 
 class AppCoordinator: NavigationCoordinator<AppRoute> {
     init() {
-        super.init(initialRoute: .splash)
+        super.init(rootViewController: BaseNavigationController(), initialRoute: .splash)
     }
     
     override func prepareTransition(for route: AppRoute) -> NavigationTransition {
@@ -35,6 +36,11 @@ class AppCoordinator: NavigationCoordinator<AppRoute> {
             let viewModel = WelcomeViewModel(router: unownedRouter)
             let viewController = WelcomeViewController(viewModel: viewModel)
             return .set([viewController])
+            
+        case .signUp:
+            let signUpCoordinator = SignUpCoordinator(rootViewController: rootViewController)
+            addChild(signUpCoordinator)
+            return .trigger(SignUpRoute.signUp, on: signUpCoordinator)
         }
     }
 }

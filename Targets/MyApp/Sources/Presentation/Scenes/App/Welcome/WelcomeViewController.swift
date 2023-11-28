@@ -45,4 +45,18 @@ class WelcomeViewController: BaseViewController<WelcomeViewModel> {
         appleButton.setImageForAllStates(MyAppAsset.Images.apple.image)
         facebookButton.setImageForAllStates(MyAppAsset.Images.facebook.image)
     }
+    
+    override func bindViewModel() {
+        super.bindViewModel()
+        let input = WelcomeViewModel.Input(
+            signInTrigger: loginButton.rx.tap.asDriver(),
+            signUpTrigger: signupButton.rx.tap.asDriver(),
+            googleTrigger: googleButton.rx.tap.asDriver(),
+            appleTrigger: appleButton.rx.tap.asDriver(),
+            facebookTrigger: facebookButton.rx.tap.asDriver()
+        )
+        
+        let output = viewModel.transform(input)
+        
+    }
 }

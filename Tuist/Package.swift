@@ -21,5 +21,6 @@ let package = Package(
         .package(url: "https://github.com/RxSwiftCommunity/NSObject-Rx", branch: "master"),
         .package(url: "https://github.com/cukingpro/ProgressHUD", branch: "13.8.6_animation-on-view"),
         .package(url: "https://github.com/devxoul/Then", .upToNextMajor(from: "3.0.0")),
+        .package(url: "https://github.com/Boris-Em/BEMCheckBox", branch: "master"),
     ]
 )

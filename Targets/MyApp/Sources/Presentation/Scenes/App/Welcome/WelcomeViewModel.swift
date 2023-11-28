@@ -11,25 +11,21 @@ final class WelcomeViewModel: ViewModelType {
 
 extension WelcomeViewModel {
     struct Input {
-        let viewDidLoad: Driver<Void>
+        let signInTrigger: Driver<Void>
+        let signUpTrigger: Driver<Void>
+        let googleTrigger: Driver<Void>
+        let appleTrigger: Driver<Void>
+        let facebookTrigger: Driver<Void>
     }
 
-    struct Output {
-        let isLoading: Driver<Bool>
-    }
+    struct Output {}
 
     func transform(_ input: Input) -> Output {
-        let activityIndicator = ActivityIndicator()
-        Driver.just(())
-            .delay(.seconds(1))
-            .trackActivity(activityIndicator)
-            .asDriver(onErrorJustReturn: ())
-            .drive(onNext: { [weak self] _ in
-                guard let self = self else { return }
-                self.router.trigger(.walkthrough)
-            })
-            .disposed(by: disposeBag)
+        input.signUpTrigger.drive(onNext: {
+            self.router.trigger(.signUp)
+        })
+        .disposed(by: disposeBag)
 
-        return Output(isLoading: activityIndicator.asDriver())
+        return Output()
     }
 }
