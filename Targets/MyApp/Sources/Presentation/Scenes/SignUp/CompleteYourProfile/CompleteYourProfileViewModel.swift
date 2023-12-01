@@ -1,7 +1,7 @@
 import XCoordinator
 import RxCocoa
 
-class SignUpViewModel: ViewModelType {
+final class CompleteYourProfileViewModel: ViewModelType {
     private let router: UnownedRouter<SignUpRoute>
     
     init(router: UnownedRouter<SignUpRoute>) {
@@ -9,19 +9,15 @@ class SignUpViewModel: ViewModelType {
     }
 }
 
-extension SignUpViewModel {
+extension CompleteYourProfileViewModel {
     struct Input {
-        let logInTrigger: Driver<Void>
+        let skipTrigger: Driver<Void>
         let continueTrigger: Driver<Void>
     }
 
     struct Output {}
 
     func transform(_ input: Input) -> Output {
-        input.continueTrigger.drive(onNext: {
-            self.router.trigger(.completeYourProfile)
-        })
-        .disposed(by: disposeBag)
         return Output()
     }
 }

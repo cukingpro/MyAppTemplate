@@ -96,4 +96,11 @@ final class SignUpViewController: BaseViewController<SignUpViewModel> {
         continueButton.setTitle("Continue")
         
     }
+    
+    override func bindViewModel() {
+        super.bindViewModel()
+        let input = SignUpViewModel.Input(logInTrigger: logInButton.rx.tap.asDriver(),
+                                          continueTrigger: continueButton.rx.tap.asDriver())
+        _ = viewModel.transform(input)
+    }
 }

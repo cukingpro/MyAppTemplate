@@ -16,7 +16,9 @@ class SignUpCoordinator: NavigationCoordinator<SignUpRoute> {
             return .push(viewController)
             
         case .completeYourProfile:
-            return .none()
+            let viewModel = CompleteYourProfileViewModel(router: unownedRouter)
+            let viewController = CompleteYourProfileViewController(viewModel: viewModel)
+            return .push(viewController)
         }
     }
 }

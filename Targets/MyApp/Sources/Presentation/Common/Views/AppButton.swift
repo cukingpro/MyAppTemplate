@@ -10,7 +10,9 @@ import Then
 import UIKit
 
 class AppButton: UIButton {
-    var font: UIFont!
+    var buttonFont: UIFont {
+        MyAppFontFamily.Urbanist.bold.font(size: 18)
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,15 +24,13 @@ class AppButton: UIButton {
         setupUI()
     }
 
-    func setupUI() {
-        font = MyAppFontFamily.Urbanist.bold.font(size: 18)
-    }
+    func setupUI() {}
 }
 
 extension AppButton {
     func setTitle(_ title: String) {
         let container = AttributeContainer().with {
-            $0.font = font
+            $0.font = buttonFont
         }
         configuration?.attributedTitle = AttributedString(title, attributes: container)
     }
@@ -81,6 +81,10 @@ final class AppTertiaryButton: AppButton {
 }
 
 final class AppTextButton: AppButton {
+    override var buttonFont: UIFont {
+        MyAppFontFamily.Urbanist.bold.font(size: 16)
+    }
+
     override func setupUI() {
         super.setupUI()
         let configuration = UIButton.Configuration.plain().with {
@@ -89,7 +93,6 @@ final class AppTextButton: AppButton {
             $0.contentInsets = .zero
         }
         self.configuration = configuration
-        font = MyAppFontFamily.Urbanist.bold.font(size: 16)
     }
 }
 
