@@ -13,6 +13,7 @@ enum AppRoute: Route {
     case walkthrough
     case welcome
     case signUp
+    case signIn
 }
 
 class AppCoordinator: NavigationCoordinator<AppRoute> {
@@ -38,9 +39,14 @@ class AppCoordinator: NavigationCoordinator<AppRoute> {
             return .set([viewController])
             
         case .signUp:
-            let signUpCoordinator = SignUpCoordinator(rootViewController: rootViewController)
+            let signUpCoordinator = SignUpCoordinator(rootViewController: rootViewController, parent: unownedRouter)
             addChild(signUpCoordinator)
             return .trigger(SignUpRoute.signUp, on: signUpCoordinator)
+            
+        case .signIn:
+            let signInCoordinator = SignInCoordinator(rootViewController: rootViewController, parent: unownedRouter)
+            addChild(signInCoordinator)
+            return .trigger(SignInRoute.signIn, on: signInCoordinator)
         }
     }
 }

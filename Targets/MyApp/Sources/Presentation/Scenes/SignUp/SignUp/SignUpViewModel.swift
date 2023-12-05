@@ -22,6 +22,12 @@ extension SignUpViewModel {
             self.router.trigger(.completeYourProfile)
         })
         .disposed(by: disposeBag)
+        
+        input.logInTrigger.drive(onNext: {
+            self.router.trigger(.signIn)
+        })
+        .disposed(by: disposeBag)
+        
         return Output()
     }
 }

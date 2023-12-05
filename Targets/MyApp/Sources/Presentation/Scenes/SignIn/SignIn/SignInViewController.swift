@@ -1,7 +1,7 @@
-import UIKit
 import BEMCheckBox
+import UIKit
 
-final class SignUpViewController: BaseViewController<SignUpViewModel> {
+final class SignInViewController: BaseViewController<SignInViewModel> {
     @IBOutlet private weak var descriptionLabel: UILabel!
     
     @IBOutlet private weak var emailLabel: UILabel!
@@ -11,10 +11,11 @@ final class SignUpViewController: BaseViewController<SignUpViewModel> {
     @IBOutlet private weak var passwordTextfield: AppTextField!
     
     @IBOutlet private weak var checkBox: BEMCheckBox!
-    @IBOutlet private weak var termsLabel: UILabel!
+    @IBOutlet private weak var rememberMeLabel: UILabel!
     
-    @IBOutlet private weak var haveAccountLabel: UILabel!
-    @IBOutlet private weak var logInButton: AppTextButton!
+    @IBOutlet private weak var forgotPasswordButton: AppTextButton!
+    @IBOutlet private weak var dontHaveAccountLabel: UILabel!
+    @IBOutlet private weak var signUpButton: AppTextButton!
     
     @IBOutlet private weak var continueWithLabel: UILabel!
     
@@ -22,7 +23,7 @@ final class SignUpViewController: BaseViewController<SignUpViewModel> {
     @IBOutlet private weak var appleButton: AppSecondaryButton!
     @IBOutlet private weak var facebookButton: AppSecondaryButton!
     
-    @IBOutlet private weak var continueButton: AppPrimaryButton!
+    @IBOutlet private weak var loginButton: AppPrimaryButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,12 +31,12 @@ final class SignUpViewController: BaseViewController<SignUpViewModel> {
     
     override func configureUI() {
         super.configureUI()
-        title = "Hello there 👋"
+        title = "Welcome back 👋"
         
         descriptionLabel.do {
             $0.font = MyAppFontFamily.Urbanist.regular.font(size: 18)
             $0.textColor = MyAppAsset.Colors.greyscale900.color
-            $0.text = "Please enter your email & password to create an account."
+            $0.text = "Please enter your email & password to log in."
             $0.numberOfLines = 0
         }
         
@@ -63,21 +64,23 @@ final class SignUpViewController: BaseViewController<SignUpViewModel> {
         
         checkBox.configureUI()
         
-        termsLabel.do {
+        rememberMeLabel.do {
             $0.font = MyAppFontFamily.Urbanist.semiBold.font(size: 16)
             $0.textColor = MyAppAsset.Colors.primary.color
-            $0.text = "I agree to Qubiko AI Public Agreement, Terms, & Privacy Policy."
+            $0.text = "Remember me"
             $0.numberOfLines = 0
         }
         
-        haveAccountLabel.do {
+        forgotPasswordButton.setTitle("Forgot password?")
+        
+        dontHaveAccountLabel.do {
             $0.numberOfLines = 1
             $0.font = MyAppFontFamily.Urbanist.medium.font(size: 16)
             $0.textColor = MyAppAsset.Colors.greyscale900.color
-            $0.text = "Already have an account?"
+            $0.text = "Don’t have an account?"
         }
         
-        logInButton.setTitle(MyAppStrings.login)
+        signUpButton.setTitle(MyAppStrings.signup)
         
         continueWithLabel.do {
             $0.numberOfLines = 0
@@ -91,14 +94,14 @@ final class SignUpViewController: BaseViewController<SignUpViewModel> {
         appleButton.setImageForAllStates(MyAppAsset.Images.apple.image)
         facebookButton.setImageForAllStates(MyAppAsset.Images.facebook.image)
         
-        continueButton.setTitle("Continue")
-        
+        loginButton.setTitle(MyAppStrings.login)
     }
     
     override func bindViewModel() {
         super.bindViewModel()
-        let input = SignUpViewModel.Input(logInTrigger: logInButton.rx.tap.asDriver(),
-                                          continueTrigger: continueButton.rx.tap.asDriver())
+        let input = SignInViewModel.Input(forgotPasswordTrigger: forgotPasswordButton.rx.tap.asDriver(),
+                                          signUpTrigger: signUpButton.rx.tap.asDriver(),
+                                          loginTrigger: loginButton.rx.tap.asDriver())
         _ = viewModel.transform(input)
     }
 }
