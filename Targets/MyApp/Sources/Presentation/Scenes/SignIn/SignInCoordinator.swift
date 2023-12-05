@@ -24,7 +24,9 @@ final class SignInCoordinator: NavigationCoordinator<SignInRoute> {
             let viewController = SignInViewController(viewModel: viewModel)
             return .push(viewController)
         case .resetPassword:
-            return .none()
+            let viewModel = ResetPasswordViewModel(router: unownedRouter)
+            let viewController = ResetPasswordViewController(viewModel: viewModel)
+            return .push(viewController)
         case .otpCodeVerification:
             return .none()
         case .createNewPassword:
