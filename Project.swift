@@ -67,6 +67,7 @@ let project = Project(
                 .external(name: "Then"),
                 .external(name: "BEMCheckBox"),
                 .external(name: "PhoneNumberKit"),
+                .external(name: "CHIOTPField"),
             ]
         ),
     ]
