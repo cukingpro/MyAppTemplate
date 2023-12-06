@@ -4,4 +4,12 @@ class {{name}}ViewController: BaseViewController<{{name}}ViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func configureUI() {
+        super.configureUI()
+    }
+    
+    override func bindViewModel() {
+        super.bindViewModel()
+    }
 }
