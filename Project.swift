@@ -1,6 +1,6 @@
+import MyPlugin
 import ProjectDescription
 import ProjectDescriptionHelpers
-import MyPlugin
 
 /*
                 +-------------+
@@ -32,7 +32,7 @@ let infoPlist: [String: Plist.Value] = [
     "CFBundleShortVersionString": "1.0",
     "CFBundleVersion": "1",
     "UIMainStoryboardFile": "",
-    "UILaunchStoryboardName": "LaunchScreen"
+    "UILaunchStoryboardName": "LaunchScreen",
 ]
 
 let project = Project(
@@ -61,7 +61,6 @@ let project = Project(
                 .external(name: "RxReachability"),
                 .external(name: "Moya"),
                 .external(name: "IQKeyboardManagerSwift"),
-                .external(name: "IHProgressHUD"),
                 .external(name: "NSObject-Rx"),
                 .external(name: "ProgressHUD"),
                 .external(name: "Then"),
