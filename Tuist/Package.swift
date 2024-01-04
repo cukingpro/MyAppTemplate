@@ -1,9 +1,4 @@
-//
-//  Package.swift
-//  Manifests
-//
-//  Created by HuyTNH on 25/11/2023.
-//
+// swift-tools-version: 5.9
 
 import PackageDescription
 

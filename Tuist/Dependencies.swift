@@ -1,9 +1,4 @@
-//
-//  Dependencies.swift
-//  Config
-//
-//  Created by HuyTNH on 05/11/2023.
-//
+// swift-tools-version: 5.9
 
 import ProjectDescription
 
