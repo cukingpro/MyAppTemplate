@@ -16,3 +16,7 @@
 "login" = "Log in";
 "signup" = "Sign up";
 "continue_with" = "or continue with";
+"tabbar_chat" = "Chat";
+"tabbar_assistants" = "Assistants";
+"tabbar_history" = "History";
+"tabbar_account" = "Account";

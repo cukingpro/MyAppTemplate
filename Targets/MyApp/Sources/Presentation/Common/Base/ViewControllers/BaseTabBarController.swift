@@ -13,6 +13,11 @@ class BaseTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupTabbar()
+    }
+    
+    func setupTabbar() {
+        tabBar.tintColor = MyAppAsset.Colors.primary.color
+        tabBar.unselectedItemTintColor = MyAppAsset.Colors.greyscale500.color
     }
 }

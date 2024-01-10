@@ -14,6 +14,7 @@ enum AppRoute: Route {
     case welcome
     case signUp
     case signIn
+    case main
 }
 
 class AppCoordinator: NavigationCoordinator<AppRoute> {
@@ -47,6 +48,10 @@ class AppCoordinator: NavigationCoordinator<AppRoute> {
             let signInCoordinator = SignInCoordinator(rootViewController: rootViewController, parent: unownedRouter)
             addChild(signInCoordinator)
             return .trigger(SignInRoute.signIn, on: signInCoordinator)
+            
+        case .main:
+            let mainCoordinator = MainCoordinator()
+            return .set([mainCoordinator])
         }
     }
 }
