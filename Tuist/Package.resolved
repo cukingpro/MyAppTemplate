@@ -28,6 +28,15 @@
       }
     },
     {
+      "identity" : "iqkeyboardmanager",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hackiftekhar/IQKeyboardManager",
+      "state" : {
+        "revision" : "aa656e1f0d95f0154622f453599318602848be3b",
+        "version" : "7.0.1"
+      }
+    },
+    {
       "identity" : "moya",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Moya/Moya",
@@ -124,6 +133,15 @@
       "state" : {
         "branch" : "master",
         "revision" : "00d28c077313a7ca6a7008632d20aaca15cd7d0e"
+      }
+    },
+    {
+      "identity" : "swifterswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwifterSwift/SwifterSwift",
+      "state" : {
+        "revision" : "1eab3444fa06a344a35e79540719df956ab4d4ad",
+        "version" : "6.0.0"
       }
     },
     {

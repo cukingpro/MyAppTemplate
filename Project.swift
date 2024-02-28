@@ -1,5 +1,4 @@
 import ProjectDescription
-import ProjectDescriptionHelpers
 
 let infoPlist: [String: Plist.Value] = [
     "CFBundleShortVersionString": "1.0",
@@ -12,7 +11,7 @@ let project = Project(
     name: "MyApp",
     organizationName: "com.thehuytong",
     targets: [
-        Target(
+        Target.target(
             name: "MyApp",
             destinations: .iOS,
             product: .app,
