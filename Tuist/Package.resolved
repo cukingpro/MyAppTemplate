@@ -136,6 +136,24 @@
       }
     },
     {
+      "identity" : "scrollstackcontroller",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/malcommac/ScrollStackController",
+      "state" : {
+        "revision" : "f9beff83963037ce3363be3b900b1a24ced45869",
+        "version" : "1.6.0"
+      }
+    },
+    {
+      "identity" : "snapkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SnapKit/SnapKit",
+      "state" : {
+        "revision" : "2842e6e84e82eb9a8dac0100ca90d9444b0307f4",
+        "version" : "5.7.1"
+      }
+    },
+    {
       "identity" : "swifterswift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SwifterSwift/SwifterSwift",

@@ -39,6 +39,8 @@ let project = Project(
                 .external(name: "BEMCheckBox"),
                 .external(name: "PhoneNumberKit"),
                 .external(name: "CHIOTPField"),
+                .external(name: "ScrollStackController"),
+                .external(name: "SnapKit"),
             ]
         ),
     ]

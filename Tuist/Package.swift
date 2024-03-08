@@ -20,5 +20,7 @@ let package = Package(
         .package(url: "https://github.com/Boris-Em/BEMCheckBox", branch: "master"),
         .package(url: "https://github.com/marmelroy/PhoneNumberKit", from: "3.7.0"),
         .package(url: "https://github.com/ChiliLabs/CHIOTPField", branch: "master"),
+        .package(url: "https://github.com/malcommac/ScrollStackController", from: "1.6.0"),
+        .package(url: "https://github.com/SnapKit/SnapKit", from: "5.7.0")
     ]
 )

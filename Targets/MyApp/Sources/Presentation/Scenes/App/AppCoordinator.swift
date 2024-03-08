@@ -19,7 +19,7 @@ enum AppRoute: Route {
 
 class AppCoordinator: NavigationCoordinator<AppRoute> {
     init() {
-        super.init(rootViewController: BaseNavigationController(), initialRoute: .splash)
+        super.init(rootViewController: BaseNavigationController(), initialRoute: .main)
     }
     
     override func prepareTransition(for route: AppRoute) -> NavigationTransition {
@@ -51,7 +51,8 @@ class AppCoordinator: NavigationCoordinator<AppRoute> {
             
         case .main:
             let mainCoordinator = MainCoordinator()
-            return .set([mainCoordinator])
+            mainCoordinator.rootViewController.modalPresentationStyle = .overFullScreen
+            return .presentOnRoot(mainCoordinator)
         }
     }
 }
